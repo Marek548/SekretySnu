@@ -27,4 +27,148 @@ body {
 }
 
 .fog-1 {
-  background: url('data:image
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,10 Q20,5 40,10 T80,10 T120,10 Z" fill="white"/></svg>');
+  animation: drift 40s linear infinite;
+}
+
+.fog-2 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,15 Q25,8 50,15 T100,15 Z" fill="white"/></svg>');
+  animation: drift 50s linear infinite reverse;
+  opacity: 0.1;
+}
+
+@keyframes drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #a8d8ff, #e0baff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #cbd5e1;
+  margin-bottom: 3rem;
+}
+
+/* Tablet stylizowany jako szkło */
+.tablet-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tablet-glass {
+  width: 320px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tablet-glass:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.ebook-cover {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  border-radius: 16px;
+  animation: pulseGlow 4s infinite alternate;
+}
+
+.fallback {
+  color: #aaa;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 0 rgba(168, 218, 255, 0)); }
+  100% { filter: drop-shadow(0 0 20px rgba(168, 218, 255, 0.4)); }
+}
+
+.info-box {
+  background: rgba(20, 25, 60, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.info-box p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.6);
+}
+
+.footer {
+  margin-top: 4rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.4rem; }
+  .hero p { font-size: 1.1rem; }
+  .tablet-glass { width: 280px; height: 440px; }
+  .info-box h2 { font-size: 1.7rem; }
+}
