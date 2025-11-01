@@ -11,6 +11,7 @@ body {
   color: #e2e8f0;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 .container {
@@ -25,12 +26,14 @@ body {
   margin-bottom: 0.5rem;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: fadeInDown 1s ease-out;
 }
 
 .header p {
   font-size: 1.3rem;
   color: #b7d2ff;
   margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out;
 }
 
 .main-content {
@@ -48,6 +51,7 @@ body {
   width: 350px;
   height: 500px;
   perspective: 1000px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .tablet {
@@ -69,6 +73,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 2px solid #a8d8ff;
+  transition: all 0.5s ease;
 }
 
 .glow {
@@ -92,6 +97,7 @@ body {
   font-size: 2.2rem;
   margin-bottom: 1rem;
   color: #ffffff;
+  animation: fadeInUp 1s ease-out;
 }
 
 .description p {
@@ -100,6 +106,7 @@ body {
   color: #d1d5db;
   max-width: 600px;
   margin-bottom: 1.5rem;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .cta-button {
@@ -113,6 +120,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  animation: fadeInUp 1.4s ease-out;
 }
 
 .cta-button:hover {
@@ -126,6 +134,7 @@ body {
   color: #a1a1aa;
   font-size: 0.9rem;
   text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 /* Efekty tła: gwiazdy i księżyce */
@@ -166,6 +175,21 @@ body {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Queries */
