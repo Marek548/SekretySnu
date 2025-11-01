@@ -5,38 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sekrety Spokojnego Snu</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Tło z mgłą -->
+  <div class="fog fog-1"></div>
+  <div class="fog fog-2"></div>
+
   <div class="container">
-    <!-- Nagłówek -->
-    <header class="header">
-      <h1>Sekrety Spokojnego Snu</h1>
-      <p>Jak szybko zasnąć i spać całą noc</p>
+    <header class="hero">
+      <h1 data-aos="fade-down">Sekrety Spokojnego Snu</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Jak zasnąć w 5 minut — nawet po stresującym dniu</p>
     </header>
 
-    <!-- Główna animacja: Tablet z e-bookiem -->
-    <main class="main-content">
-      <div class="tablet-container">
-        <div class="tablet">
-          <img src="okladka.png" alt="E-book: Sekrety Spokojnego Snu" class="ebook-cover" />
+    <main class="content">
+      <div class="tablet-wrapper" data-aos="zoom-in" data-aos-delay="400">
+        <div class="tablet-glass">
+          <img src="okladka.png" alt="Okładka e-booka" class="ebook-cover" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\"fallback\">Brak obrazka</div>';" />
         </div>
-        <div class="glow"></div>
       </div>
 
-      <!-- Opis -->
-      <div class="description">
-        <h2>Odkryj sekrety zdrowego snu</h2>
-        <p>W tym e-booku znajdziesz praktyczne metody, które pomogą Ci zasnąć szybciej, lepiej i bez stresu. Idealne dla osób, które walczą z bezsennością.</p>
-        <button class="cta-button">Pobierz teraz za darmo</button>
+      <div class="info-box" data-aos="fade-up" data-aos-delay="600">
+        <h2>Odkryj techniki, które działają</h2>
+        <p>Od oddychania 4-7-8, przez medytację do naturalnych ziół — wszystko w jednym przewodniku.</p>
+        <button class="cta-btn">Pobierz e-book za darmo</button>
       </div>
     </main>
 
-    <!-- Stopka -->
     <footer class="footer">
-      <p>&copy; 2025 Sekrety Spokojnego Snu | Wszelkie prawa zastrzeżone</p>
+      <p>&copy; 2025 | Sekrety Spokojnego Snu</p>
     </footer>
   </div>
+
+  <!-- AOS - biblioteka animacji przy scrollu -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script src="script.js"></script>
 </body>
