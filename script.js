@@ -1,17 +1,36 @@
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicjalizacja AOS (animacje przy scrollowaniu)
-  AOS.init({
-    duration: 800,
-    easing: 'ease-out-cubic',
-    once: true
-  });
+  // Efekty tła: gwiazdy
+  const stars = document.createElement('div');
+  stars.className = 'background-stars';
+  document.body.appendChild(stars);
 
-  // Delikatne migotanie tła (opcjonalnie)
-  const body = document.body;
-  setInterval(() => {
-    body.style.background = body.style.background === 'linear-gradient(135deg, #0b0c2a, #1a1f4b)'
-      ? 'linear-gradient(135deg, #0c0d35, #1c2155)'
-      : 'linear-gradient(135deg, #0b0c2a, #1a1f4b)';
-  }, 8000);
+  for (let i = 0; i < 50; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.width = `${Math.random() * 3 + 1}px`;
+    star.style.height = star.style.width;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.opacity = Math.random();
+    star.style.animationDelay = `${Math.random() * 5}s`;
+    stars.appendChild(star);
+  }
+
+  // Księżyc
+  const moon = document.createElement('div');
+  moon.className = 'moon';
+  document.body.appendChild(moon);
+
+  // Interakcja z tablet
+  const tablet = document.querySelector('.tablet');
+  if (tablet) {
+    tablet.addEventListener('mouseenter', () => {
+      document.querySelector('.glow').style.opacity = 1;
+    });
+
+    tablet.addEventListener('mouseleave', () => {
+      document.querySelector('.glow').style.opacity = 0;
+    });
+  }
 });
